@@ -1,4 +1,4 @@
-1.
-2.
-3.
-4.
+1.grep -r "keyword" /path/to/start/searching
+2.ps aux
+3.kill <PID>
+4.diff -u file1 file2
