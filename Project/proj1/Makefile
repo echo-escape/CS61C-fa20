@@ -28,6 +28,7 @@ steganography: imageloader.o steganography.o
 	echo "Running steganography"
 	$(CC) $(LDFLAGS) -o steganography steganography.o imageloader.o
 	./steganography testInputs/JohnConway.ppm > studentOutputs/secretMessage.ppm
+	diff 
 
 steganographymemcheck:  steganography
 	valgrind $(VGFLAGS) ./steganography testInputs/JohnConway.ppm > studentOutputs/secretMessage.ppm
