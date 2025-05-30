@@ -37,8 +37,8 @@ Image *readData(char *filename)
 
 	int width = 0, height = 0;
 	fscanf(inputFile, "%d %d", &width, &height);
-	image->rows = width;
-	image->cols = height;
+	image->rows = height;
+	image->cols = width;
 
 	int maxColorValue = 0;
 	fscanf(inputFile, "%d", &maxColorValue);
@@ -61,7 +61,7 @@ Image *readData(char *filename)
 void writeData(Image *image)
 {
 	//YOUR CODE HERE
-	int width = image->rows, height = image->cols;
+	int width = image->cols, height = image->rows;
 	int maxColorValue = 255;
 	char magicNumber[3] = {"P3\0"};
 	printf("%s\n", magicNumber);
