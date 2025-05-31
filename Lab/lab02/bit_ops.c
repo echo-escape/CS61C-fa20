@@ -9,7 +9,7 @@ unsigned get_bit(unsigned x,
     // Returning -1 is a placeholder (it makes
     // no sense, because get_bit only returns 
     // 0 or 1)
-    return -1;
+    return (x >> n) & 1;
 }
 // Set the nth bit of the value of x to v.
 // Assume 0 <= n <= 31, and v is 0 or 1
@@ -17,11 +17,22 @@ void set_bit(unsigned * x,
              unsigned n,
              unsigned v) {
     // YOUR CODE HERE
+    unsigned temp = *x;
+    unsigned maskToZero = 1U << n;
+    maskToZero = ~(maskToZero);
+    temp = temp & maskToZero;
+    unsigned mask = v << n;
+    temp = temp | mask;
+    *x = temp;
 }
 // Flip the nth bit of the value of x.
 // Assume 0 <= n <= 31
 void flip_bit(unsigned * x,
               unsigned n) {
     // YOUR CODE HERE
+    unsigned temp = *x;
+    unsigned mask = 1U << n;
+    temp = temp ^ mask;
+    *x = temp;
 }
 
