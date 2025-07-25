@@ -78,7 +78,7 @@ map:
 
     # recurse
     ### YOUR CODE HERE ###
-    jal ra, map
+    jal  map
 
 done:
     # Epilogue: Restore register values and free space from the stack
