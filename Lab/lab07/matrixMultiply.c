@@ -22,7 +22,7 @@ void multMat1( int n, float *A, float *B, float *C ) {
                 C[i+j*n] += A[i+k*n]*B[k+j*n];
 }
 
-void multMat2( int n, float *A, float *B, float *C ) {
+void multMat2( int n, float *A, float *B, float *C ) { // slowest
     int i,j,k;
     /* This is ikj loop order. */
     for( i = 0; i < n; i++ )
@@ -58,7 +58,7 @@ void multMat5( int n, float *A, float *B, float *C ) {
                 C[i+j*n] += A[i+k*n]*B[k+j*n];
 }
 
-void multMat6( int n, float *A, float *B, float *C ) {
+void multMat6( int n, float *A, float *B, float *C ) { // fatest
     int i,j,k;
     /* This is kji loop order. */
     for( k = 0; k < n; k++ )

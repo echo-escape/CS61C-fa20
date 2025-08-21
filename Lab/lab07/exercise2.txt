@@ -1,8 +1,10 @@
-1.
-2.
+1. kji
+2. ikj
 
 --- lines below are ignored by the AG ---
 
-Checkoff Question 1:
-Checkoff Question 2:
-Checkoff Question 3:
+Checkoff Question 1: 最慢是因为有两个数组步长都是固定n,只有一个0,无法很好的利用空间局部性、
+    程序只使用其中的一个元素，然后就跳到很远的另一个内存地址，导致缓存行中的大部分数据都被浪费了，
+    下一次访问几乎总是 Cache Miss。
+Checkoff Question 2: 最快是因为有数组，每次步长都是1,和步长为0, 可以充分利用空间局部性
+Checkoff Question 3: 改变内层循环，可以改变最后数组的步长大小，从而影响缓存行中的数据能否有效利用

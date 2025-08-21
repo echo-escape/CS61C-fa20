@@ -1,24 +1,28 @@
 Scenario 1
-    1.
-    2.
-    3.
+    1. [cache size] [array size] 当cache_size小于array_size时 hit rate为0
+    2. 当cache_size小于array_size时, rep count 无论如何增加都是0
+    3. [cache size], [128] [array size], [32]
 
 Scenario 2
-    1.
-    2.
-    3.
+    1. 64 accesses
+    2. MHHH
+    3. 当rep count 无穷大的时候，hit rate 会趋近于 1.00
 
 Scenario 3
-    1.
-    2.
-    3.
-    4.
-    5.
+    1. [L1 0.50], [L2, 0.00] 
+    2. [32 of L1 accesses], 
+    3. [16 of L2 accesses],
+    4. L2 Bolock Size 
+    5. +, =, =, = 
 
 --- lines below are ignored by the AG ---
 
-Checkoff Question 1:
-Checkoff Question 2:
-Checkoff Question 3:
-Checkoff Question 4:
-Checkoff Question 5:
+Checkoff Question 1: 当cache_size小于array_size时, rep count 无论如何增加都是0
+Checkoff Question 2: [cache size], [array size]
+Checkoff Question 3: 当rep_count > 0, 在第一遍历的时候，cache_size = array_size, cache中全是array中的元素，
+    第二次命中率是百分之百
+Checkoff Question 4: 这个模式是miss和hit呈显出规律所以就可以用最小重复字串来评估命中率
+Checkoff Question 5: 这里题目的意思是对每个数组的元素都要进行n种函数的映射，方法就是优先处理一部分数组，
+    满足缓存大小，再去处理下一个
+Checkoff Question 6: 当在L1 中miss, 就会去L2寻找，当增加block_size就会在第一次将数组尽可能多的加载到L2中，
+    当L1再次需要的时候，就可以直接在L2中找到，从而不改变L1 hit rate, 增加L2 hit rate
